@@ -1,0 +1,62 @@
+.floatingMenu__container {
+  min-width: 150px;
+  border: 2px solid var(--tertiaryColor);
+  position: absolute;
+  z-index: 100000;
+  top: 100%;
+  left: -100%;
+  transform-origin: center top;
+  transition: 300ms linear all;
+}
+
+.floatingMenu__container-pointer {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid var(--tertiaryColor);
+  top: -10px;
+}
+
+.floatingMenu__list {
+  padding: 1rem;
+  background-color: var(--primaryColor);
+  list-style: none;
+}
+
+.floatingMenu__listItem {
+  border-bottom: 1px solid var(--lighterSecondaryColor);
+  padding-bottom: 5px;
+}
+
+.floatingMenu__listItem-link a {
+  color: var(--tertiaryColor);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.floatingMenu__listItem-select span {
+  font-size: 12px;
+  cursor: default;
+}
+
+.floatingMenu__listItem-select-options {
+  display: flex;
+  align-items: stretch;
+}
+
+.floatingMenu__listItem-select-options__item {
+  background-color: var(--lighterSecondaryColor);
+  font-size: 9px;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: c;
+}
+.floatingMenu__listItem-select-options__item:first-of-type {
+  margin-left: 0px !important;
+}

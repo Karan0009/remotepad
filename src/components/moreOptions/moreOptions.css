@@ -1,0 +1,26 @@
+.moreOptions__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.moreOptions__container > span {
+  cursor: pointer;
+  width: 30px;
+  height: 2px;
+  background-color: var(--tertiaryColor);
+  position: relative;
+  top: -5px;
+}
+
+.moreOptions__container > span::after {
+  content: "";
+  cursor: pointer;
+  width: 20px;
+  height: 2px;
+  background-color: var(--tertiaryColor);
+  position: absolute;
+  top: 5px;
+  left: 0%;
+}
