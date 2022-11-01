@@ -1,4 +1,4 @@
-export const ServerAddress = "http://localhost:8000/";
+export const ServerAddress = "https://remotepad-service.onrender.com/";
 
 export const EndPoints = {
   getContent: "api/content",
