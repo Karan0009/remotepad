@@ -2,16 +2,17 @@ import "./userInputArea.css";
 import { GetEndpoint } from "../../utils/endpoints";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setIsDataLoaded } from "../../reducers/content";
 
 export default function UserInputArea() {
   const [userInput, setUserInput] = useState("");
-  const content = useSelector((state) => state.content);
+  // const content = useSelector((state) => state.content);
   const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => await getContentFromApi())();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getContentFromApi = () => {
