@@ -2,9 +2,13 @@ import "./userInputArea.css";
 import { GetEndpoint } from "../../utils/endpoints";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsDataLoaded } from "../../reducers/content";
 
 export default function UserInputArea() {
   const [userInput, setUserInput] = useState("");
+  const content = useSelector((state) => state.content);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => await getContentFromApi())();
@@ -14,10 +18,13 @@ export default function UserInputArea() {
     axios
       .get(GetEndpoint("getContent"))
       .then((data) => {
+        console.log("data: ", data);
+        dispatch(setIsDataLoaded(true));
         console.log(data.data.data);
         if (data.data.success) setUserInput(data.data.data);
       })
       .catch((err) => {
+        dispatch(setIsDataLoaded(true));
         console.log(err);
       });
   };
