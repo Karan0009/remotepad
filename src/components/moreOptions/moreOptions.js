@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import FloatingMenu from "../floatingMenu/floatingMenu";
 import "./moreOptions.css";
 
 export default function MoreOptions() {
   const [openMenu, setOpenMenu] = useState(false);
+  const darkMode = useSelector((state) => state.darkMode);
   const [xPosOfClick, setXPosOfClick] = useState(0);
 
   const openOptionsDropdown = (event) => {
@@ -37,7 +39,14 @@ export default function MoreOptions() {
   ];
   return (
     <div className="moreOptions__container">
-      <span onClick={openOptionsDropdown}></span>
+      <span
+        onClick={openOptionsDropdown}
+        style={{ background: darkMode.colors.primaryColor }}
+      ></span>
+      <span
+        onClick={openOptionsDropdown}
+        style={{ background: darkMode.colors.primaryColor }}
+      ></span>
       <FloatingMenu
         showMenu={openMenu}
         body={options}

@@ -2,11 +2,12 @@ import "./userInputArea.css";
 import { GetEndpoint } from "../../utils/endpoints";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setIsDataLoaded } from "../../reducers/content";
 
 export default function UserInputArea() {
   const [userInput, setUserInput] = useState("");
+  const darkMode = useSelector((store) => store.darkMode);
   // const content = useSelector((state) => state.content);
   const dispatch = useDispatch();
 
@@ -69,6 +70,10 @@ export default function UserInputArea() {
       <textarea
         value={userInput}
         onChange={userInputChangeHandler}
+        style={{
+          background: darkMode.colors.tertiaryColor,
+          color: darkMode.colors.primaryColor,
+        }}
         className="userInputArea__textInput"
       />
     </div>

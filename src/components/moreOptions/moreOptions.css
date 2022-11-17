@@ -14,13 +14,11 @@
   top: -5px;
 }
 
-.moreOptions__container > span::after {
-  content: "";
+.moreOptions__container > span:nth-child(2) {
   cursor: pointer;
   width: 20px;
   height: 2px;
   background-color: var(--tertiaryColor);
   position: absolute;
-  top: 5px;
-  left: 0%;
+  top: 17px;
 }

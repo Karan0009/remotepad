@@ -2,12 +2,15 @@
   width: 100%;
   display: flex;
   margin-top: 1rem;
+  min-height: 90vh;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .userInputArea__textInput {
   width: 80%;
-  margin: auto;
-  height: 70vh;
+  margin: 0 auto;
+  height: auto;
   font-size: 1.2rem;
   overflow: visible;
   border: none;
