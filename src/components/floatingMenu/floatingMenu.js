@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./floatingMenu.css";
 
 const FloatingMenu = (props) => {
-  const { showMenu, body, xPosOfClick } = props;
-  const [xPosOfPointer, setXPosOfPointer] = useState(0);
+  const { showMenu, body } = props;
+  // const [xPosOfPointer, setXPosOfPointer] = useState(0);
 
-  useEffect(() => {
-    const menuRect = document
-      .querySelector(".floatingMenu__container")
-      .getBoundingClientRect();
-    const width = menuRect.right - menuRect.left;
-    const posOfClickRelativeToMenuRectLeft = xPosOfClick - menuRect.left;
-    const percentageOfClick = (posOfClickRelativeToMenuRectLeft * 100) / width;
-    setXPosOfPointer(percentageOfClick);
-  }, [xPosOfClick]);
+  // useEffect(() => {
+  //   const menuRect = document
+  //     .querySelector(".floatingMenu__container")
+  //     .getBoundingClientRect();
+  //   const width = menuRect.right - menuRect.left;
+  //   const posOfClickRelativeToMenuRectLeft = xPosOfClick - menuRect.left;
+  //   const percentageOfClick = (posOfClickRelativeToMenuRectLeft * 100) / width;
+  //   setXPosOfPointer(percentageOfClick);
+  // }, [xPosOfClick]);
 
   useEffect(() => {
     console.log(showMenu);
