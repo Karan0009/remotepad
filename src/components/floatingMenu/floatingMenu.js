@@ -22,12 +22,12 @@ const FloatingMenu = (props) => {
   return (
     <div
       style={{
-        opacity: showMenu ? "1" : "0",
+        display: showMenu ? "flex" : "none",
       }}
       className="floatingMenu__container"
     >
       <span
-        style={{ left: `${xPosOfPointer}%` }}
+        style={{ left: "100%" }}
         className="floatingMenu__container-pointer"
       ></span>
       {body ? (

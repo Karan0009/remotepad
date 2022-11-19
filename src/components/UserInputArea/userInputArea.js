@@ -8,6 +8,7 @@ import { setIsDataLoaded } from "../../reducers/content";
 export default function UserInputArea() {
   const [userInput, setUserInput] = useState("");
   const darkMode = useSelector((store) => store.darkMode);
+  const content = useSelector((store) => store.content);
   // const content = useSelector((state) => state.content);
   const dispatch = useDispatch();
 
@@ -17,12 +18,12 @@ export default function UserInputArea() {
   }, []);
 
   const getContentFromApi = () => {
+    dispatch(setIsDataLoaded(false));
+    setUserInput("Loading your notes...");
     axios
       .get(GetEndpoint("getContent"))
       .then((data) => {
-        console.log("data: ", data);
         dispatch(setIsDataLoaded(true));
-        console.log(data.data.data);
         if (data.data.success) setUserInput(data.data.data);
       })
       .catch((err) => {
@@ -58,7 +59,8 @@ export default function UserInputArea() {
   // };
 
   const userInputChangeHandler = (event) => {
-    console.log(event.target.value);
+    if (!content.isDataLoaded) return;
+
     setUserInput(event.target.value);
     (async () => await setContentToApi(event.target.value))();
   };
@@ -69,13 +71,18 @@ export default function UserInputArea() {
     <div className="userInputArea__container">
       <textarea
         value={userInput}
+        disabled={!content.isDataLoaded}
         onChange={userInputChangeHandler}
         style={{
           background: darkMode.colors.tertiaryColor,
           color: darkMode.colors.primaryColor,
+          cursor: content.isDataLoaded ? "auto" : "progress",
         }}
-        className="userInputArea__textInput"
-      />
+        className={
+          (content.isDataLoaded ? "" : "disable-select") +
+          " userInputArea__textInput"
+        }
+      ></textarea>
     </div>
   );
 }

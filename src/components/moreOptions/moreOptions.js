@@ -39,14 +39,18 @@ export default function MoreOptions() {
   ];
   return (
     <div className="moreOptions__container">
-      <span
+      <div
         onClick={openOptionsDropdown}
-        style={{ background: darkMode.colors.primaryColor }}
-      ></span>
-      <span
-        onClick={openOptionsDropdown}
-        style={{ background: darkMode.colors.primaryColor }}
-      ></span>
+        style={{
+          position: "relative",
+          width: "30px",
+          height: "7px",
+          cursor: "pointer",
+        }}
+      >
+        <span style={{ background: darkMode.colors.primaryColor }}></span>
+        <span style={{ background: darkMode.colors.primaryColor }}></span>
+      </div>
       <FloatingMenu
         showMenu={openMenu}
         body={options}

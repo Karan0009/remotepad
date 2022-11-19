@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import DarkModeToggle from "../darkModeToggle/darkModeToggle";
 import MoreOptions from "../moreOptions/moreOptions";
+
 import "./header.css";
 
 export default function Header() {
@@ -41,7 +42,7 @@ export default function Header() {
           copy
         </button>
         <button
-          className="btn btn-transparent"
+          className="header-container__clearAllBtn btn btn-transparent"
           style={{ color: darkMode.colors.primaryColor }}
         >
           clear

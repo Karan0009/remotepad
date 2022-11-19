@@ -5,20 +5,18 @@
   padding: 1rem;
 }
 
-.moreOptions__container > span {
-  cursor: pointer;
+.moreOptions__container div > span {
   width: 30px;
   height: 2px;
   background-color: var(--tertiaryColor);
-  position: relative;
-  top: -5px;
+  position: absolute;
+  top: 0px;
 }
 
-.moreOptions__container > span:nth-child(2) {
-  cursor: pointer;
+.moreOptions__container div > span:nth-child(2) {
   width: 20px;
   height: 2px;
   background-color: var(--tertiaryColor);
   position: absolute;
-  top: 17px;
+  top: 100%;
 }

@@ -3,14 +3,37 @@
   padding: 0;
   box-sizing: border-box;
   transition: 200ms all linear;
+  outline: none;
+}
+
+.disable-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.disable-select::selection {
+  background: #00000000;
+}
+
+::selection {
+  color: white;
+  background: var(--secondaryColor);
 }
 
 .container {
-  width: clamp(200px, 100vw, 1920px);
+  min-width: 200px;
+  width: 100vw;
+  overflow: hidden;
+  height: 100vh;
+  max-width: 1920px;
   background-color: var(--primaryColor);
-  padding: 0 1rem;
   margin: 0 auto;
-  overflow-x: hidden;
+}
+
+.page {
+  height: 100%;
 }
 
 .btn {
