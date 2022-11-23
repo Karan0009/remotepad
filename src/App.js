@@ -11,7 +11,9 @@ function App() {
       className="App container"
       style={{ backgroundColor: darkMode.colors.tertiaryColor }}
     >
-      <PaddedWrapper>
+      <PaddedWrapper
+        style={{ position: "absolute", top: "0", left: "0", width: "100%" }}
+      >
         <Header></Header>
       </PaddedWrapper>
       <Home></Home>
